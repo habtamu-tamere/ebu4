@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCraft - Premium AI Prompts & Automation Solutions</title>
+    <meta name="description" content="High-performance AI prompts and automation solutions for businesses, creators, and students. Boost productivity with our expert-crafted resources.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+</head>
+<body>
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div class="popup-header">
+                <h3>Wait! Get Your Exclusive Discount</h3>
+                <p>Subscribe now and get <strong>25% OFF</strong> your first purchase plus our premium prompt toolkit FREE</p>
+            </div>
+            <form id="exit-popup-form" class="popup-form">
+                <input type="email" placeholder="Your best email" required>
+                <button type="submit" class="cta-button">Claim My Discount</button>
+                <p class="small-text">We respect your privacy. Unsubscribe anytime.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <!-- <img src="assets/images/logo.png" alt="PromptCraft Logo" class="logo-img"> -->
+                <div class="logo-text">
+                    <h1>AIPromptCraft</h1>
+                    <p>AI Solutions Engineered</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#collections">Prompt Collections</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#" class="cta-button nav-cta">Get Started</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Trusted by 15,000+ professionals</div>
+                <h1>Supercharge Your Workflow With Expert AI Solutions</h1>
+                <p class="subtitle">Premium prompt collections and automation services engineered to deliver consistent, high-quality results across all major platforms.</p>
+                <div class="hero-cta">
+                    <button class="cta-button">Explore Collections</button>
+                    <a href="#demo" class="secondary-button">See Demo</a>
+                </div>
+                <div class="trust-badges">
+                    <div class="badge-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>30-Day Money Back Guarantee</span>
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9/5 (2,347 Reviews)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/hero-dashboard.png" alt="AI Prompt Dashboard" id="dynamic-hero-image">
+                <div class="floating-badge">
+                    <div class="floating-badge-content">
+                        <span>+80%</span>
+                        <small>Performance Boost</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Logos -->
+    <section class="clients">
+        <div class="container">
+            <p>Trusted by innovative teams at:</p>
+            <div class="logos">
+                <img src="assets/images/client1.png" alt="TechCorp">
+                <img src="assets/images/client2.png" alt="DigitalAgency">
+                <img src="assets/images/client3.png" alt="EduTech">
+                <img src="assets/images/client4.png" alt="SocialMediaPro">
+                <img src="assets/images/client5.png" alt="StartUpHub">
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <h2>Comprehensive AI Solutions</h2>
+            <p class="section-subtitle">Tailored solutions for every professional need</p>
+            
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/icons/tiktok.png" alt="TikTok Automation">
+                    </div>
+                    <h3>TikTok Automation</h3>
+                    <p>Growth-focused automation solutions for content creation, scheduling, and analytics.</p>
+                    <ul class="solution-features">
+                        <li>Content planning automation</li>
+                        <li>Auto-scheduling tools</li>
+                        <li>Performance analytics</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                
+                <div class="solution-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="solution-icon">
+                        <img src="assets/icons/social-media.png" alt="Social Media Automation">
+                    </div>
+                    <h3>Social Media Automation</h3>
+                    <p>End-to-end automation for all major platforms with AI-powered content generation.</p>
+                    <ul class="solution-features">
+                        <li>Cross-platform scheduling</li>
+                        <li>AI content generation</li>
+                        <li>Engagement automation</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/icons/youtube.png" alt="YouTube Automation">
+                    </div>
+                    <h3>YouTube Automation</h3>
+                    <p>Comprehensive tools for video ideation, scripting, and channel growth.</p>
+                    <ul class="solution-features">
+                        <li>Video script generation</li>
+                        <li>SEO optimization</li>
+                        <li>Thumbnail design prompts</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/icons/student.png" alt="Student AI Tools">
+                    </div>
+                    <h3>Student AI Tools</h3>
+                    <p>Academic-focused prompts and automation for research, writing, and study.</p>
+                    <ul class="solution-features">
+                        <li>Research paper assistance</li>
+                        <li>Study plan generation</li>
+                        <li>Citation automation</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/icons/agent.png" alt="AI Agents">
+                    </div>
+                    <h3>AI Agents</h3>
+                    <p>Custom AI agents for business processes, customer service, and data analysis.</p>
+                    <ul class="solution-features">
+                        <li>Custom agent development</li>
+                        <li>Process automation</li>
+                        <li>24/7 availability</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+                
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <img src="assets/icons/business.png" alt="Business Solutions">
+                    </div>
+                    <h3>Business Solutions</h3>
+                    <p>Custom AI implementations for your unique business requirements.</p>
+                    <ul class="solution-features">
+                        <li>Custom prompt engineering</li>
+                        <li>Workflow automation</li>
+                        <li>Team training</li>
+                    </ul>
+                    <a href="#" class="learn-more">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <div class="demo-content">
+                <h2>See Our Solutions In Action</h2>
+                <p>Watch how our prompt collections and automation tools can transform your workflow in minutes.</p>
+                <ul class="demo-features">
+                    <li><i class="fas fa-check"></i> Real-world use cases</li>
+                    <li><i class="fas fa-check"></i> Before/after comparisons</li>
+                    <li><i class="fas fa-check"></i> Performance metrics</li>
+                </ul>
+                <button class="cta-button">Watch Demo</button>
+            </div>
+            <div class="demo-video">
+                <div class="video-placeholder">
+                    <i class="fas fa-play"></i>
+                    <img src="assets/images/demo-thumbnail.jpg" alt="Demo Video Thumbnail">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section id="collections" class="collections">
+        <div class="container">
+            <h2>Premium Prompt Collections</h2>
+            <p class="section-subtitle">Expertly crafted prompts for maximum effectiveness</p>
+            
+            <div class="collection-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="automation">Automation</button>
+                <button class="filter-btn" data-filter="content">Content</button>
+                <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="education">Education</button>
+                <button class="filter-btn" data-filter="creative">Creative</button>
+            </div>
+            
+            <div class="collection-grid" id="collection-container">
+                <!-- Collections loaded from Firebase -->
+                <div class="loading-spinner"></div>
+            </div>
+            
+            <div class="view-all">
+                <a href="#" class="secondary-button">View All Collections</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why PromptCraft Delivers Better Results</h2>
+            <p class="section-subtitle">Our methodology ensures superior performance</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-atom"></i>
+                    </div>
+                    <h3>Scientific Approach</h3>
+                    <p>Prompts engineered using proven psychological principles and linguistic patterns.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Performance Optimized</h3>
+                    <p>Each prompt tested across multiple AI models for consistent quality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Continually Updated</h3>
+                    <p>Regular updates to adapt to evolving AI capabilities and platform changes.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Structured Methodology</h3>
+                    <p>Clear frameworks for different use cases and complexity levels.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Context-Aware</h3>
+                    <p>Prompts include necessary background and parameters for best results.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Quality Guaranteed</h3>
+                    <p>30-day money back guarantee if you're not completely satisfied.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <p class="section-subtitle">What our customers say about PromptCraft</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The social media automation tools saved us 20+ hours per week while improving our engagement metrics by 65%. Absolute game-changer for our agency."</p>
+                        <div class="author">
+                            <img src="assets/images/testimonial1.jpg" alt="Sarah K.">
+                            <div class="author-info">
+                                <h4>Sarah K.</h4>
+                                <p>CEO, Digital Growth Agency</p>
+                                <div class="results">
+                                    <span><i class="fas fa-chart-line"></i> +65% engagement</span>
+                                    <span><i class="fas fa-clock"></i> 20 hrs/week saved</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"As a solopreneur, the business prompt collection helped me systemize operations that normally would require hiring staff. ROI in the first week!"</p>
+                        <div class="author">
+                            <img src="assets/images/testimonial2.jpg" alt="James L.">
+                            <div class="author-info">
+                                <h4>James L.</h4>
+                                <p>Founder, E-Commerce Brand</p>
+                                <div class="results">
+                                    <span><i class="fas fa-dollar-sign"></i> 4x ROI</span>
+                                    <span><i class="fas fa-users"></i> 0 hires needed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"The student package helped me organize my PhD research and writing process. What normally takes weeks now takes days with better quality output."</p>
+                        <div class="author">
+                            <img src="assets/images/testimonial3.jpg" alt="Maria G.">
+                            <div class="author-info">
+                                <h4>Maria G.</h4>
+                                <p>PhD Candidate, Neuroscience</p>
+                                <div class="results">
+                                    <span><i class="fas fa-book"></i> 300% faster research</span>
+                                    <span><i class="fas fa-graduation-cap"></i> Higher quality output</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots"></div>
+                    <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Choose the plan that fits your needs</p>
+            
+            <div class="pricing-tabs">
+                <button class="pricing-tab active" data-plan="individual">Individual</button>
+                <button class="pricing-tab" data-plan="team">Team</button>
+                <button class="pricing-tab" data-plan="enterprise">Enterprise</button>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <div class="price">
+                            <span class="amount">$29</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Perfect for individuals getting started with AI</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 1 Premium Collection</li>
+                        <li><i class="fas fa-check"></i> Basic Automation Tools</li>
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Weekly Updates</li>
+                        <li><i class="fas fa-check"></i> 1 User License</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <div class="price">
+                            <span class="amount">$79</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>For professionals serious about productivity</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 5 Premium Collections</li>
+                        <li><i class="fas fa-check"></i> Advanced Automation Suite</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                        <li><i class="fas fa-check"></i> Daily Updates</li>
+                        <li><i class="fas fa-check"></i> 3 User Licenses</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Agency</h3>
+                        <div class="price">
+                            <span class="amount">$199</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p>Complete solution for teams and agencies</p>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> All Premium Collections</li>
+                        <li><i class="fas fa-check"></i> Full Automation Suite</li>
+                        <li><i class="fas fa-check"></i> 24/7 VIP Support</li>
+                        <li><i class="fas fa-check"></i> Real-time Updates</li>
+                        <li><i class="fas fa-check"></i> 10 User Licenses</li>
+                    </ul>
+                    <button class="cta-button">Get Started</button>
+                </div>
+            </div>
+            
+            <div class="custom-plan">
+                <h3>Need a custom solution?</h3>
+                <p>We offer tailored plans for large organizations and unique requirements.</p>
+                <a href="#" class="secondary-button">Request Custom Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Get AI Insights & Exclusive Offers</h2>
+                <p>Subscribe to our newsletter and receive weekly tips, prompt engineering techniques, and special discounts.</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your best email" required>
+                        <button type="submit" class="cta-button">Subscribe</button>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                            <span>I agree to receive emails and accept the <a href="#">privacy policy</a></span>
+                        </label>
+                    </div>
+                </form>
+                <div class="guarantee">
+                    <i class="fas fa-lock"></i>
+                    <span>We respect your privacy. Unsubscribe anytime.</span>
+                </div>
+            </div>
+            <div class="newsletter-image">
+                <img src="assets/images/newsletter.png" alt="Newsletter Benefits">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <p class="section-subtitle">Find answers to common questions about PromptCraft</p>
+            
+            <div class="faq-grid">
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How do I access my purchased prompt collections?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Immediately after purchase, you'll receive an email with download instructions and access to your private dashboard where all your collections are available. You can also log in to our portal anytime to access your materials.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I use these prompts with any AI platform?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! While some collections are optimized for specific platforms (noted in the description), all prompts can be adapted to work with ChatGPT, Claude, Bard, Midjourney, and other major AI systems. We include platform-specific tips when relevant.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            What's your refund policy?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We offer a 30-day money-back guarantee. If you're not satisfied with your purchase, simply email us with evidence you've tried at least 20 prompts from the collection, and we'll issue a full refund.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-column">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            How often are new prompts added?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We update our collections quarterly with new prompts and retire less effective ones. As a customer, you get free access to all updates for collections you've purchased. Our automation tools receive weekly improvements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Do you offer team licenses?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely! Our Professional and Agency plans include multiple user licenses. For larger teams, we offer custom enterprise solutions with volume discounts and additional features like centralized administration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Can I request custom prompts for my business?
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, we offer custom prompt engineering services. Our experts will work with you to develop tailored solutions for your specific needs. Contact our sales team for a consultation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-cta">
+                <p>Still have questions? Our support team is ready to help.</p>
+                <a href="#" class="secondary-button">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Transform Your Workflow?</h2>
+            <p>Join 15,000+ professionals who are achieving better results in less time with PromptCraft.</p>
+            <div class="cta-buttons">
+                <button class="cta-button">Browse Collections</button>
+                <a href="#" class="secondary-button">Book a Demo</a>
+            </div>
+            <div class="guarantee-badge">
+                <img src="assets/images/guarantee-badge.png" alt="30-Day Guarantee">
+                <p>30-Day Money Back Guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="assets/images/logo-white.png" alt="PromptCraft Logo" class="logo-img">
+                        <div class="logo-text">
+                            <h3>PromptCraft</h3>
+                            <p>AI Solutions Engineered</p>
+                        </div>
+                    </div>
+                    <p class="footer-about">We build high-performance AI tools and resources to help professionals and businesses achieve more with artificial intelligence.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="#">TikTok Automation</a></li>
+                        <li><a href="#">Social Media Automation</a></li>
+                        <li><a href="#">YouTube Automation</a></li>
+                        <li><a href="#">Student AI Tools</a></li>
+                        <li><a href="#">AI Agents</a></li>
+                        <li><a href="#">Business Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Prompt Collections</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Webinars</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <p>&copy; 2023 PromptCraft. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom-right">
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-cc-paypal"></i>
+                        <i class="fab fa-cc-stripe"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    <!-- Main Script -->
+    <script src="js/scripts.js"></script>
+</body>
+</html>
